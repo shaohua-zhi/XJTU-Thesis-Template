@@ -1,5 +1,112 @@
-% !Mode:: "TeX:UTF-8" 
+%!Mode::"TeX:UTF-8"
 
-\BiChapter{参考文献}{Reference}
+\BiChapter{图表公式排版}{Figures, Tables, and Equations}
 
-参考文献格式应符合国家标准 GB/T-7714-2005《文后参考文献著录规则》。中国国家标准化管理委员会于 2015 年 5 月 15 日发布了新的标准 GB/T 7714-2015《信息与文献参考文献著录规则》。因为二者的差别非常小，所以采用了新的标准。标准的 BiBTeX 格式网上资源非常多，本文使用了李泽平开发的版本，详细格式请参考文献\cite{Lee2016}。
+虽然本模板不讲解\hologo{LaTeX}的详细使用方法，但是为了方便大家使用本模板撰写论文，本章对论文写作中经常用到的{\heiti 图、表、公式}等内容的排版方法做一个简单介绍。
+
+\begin{mdframed}
+本模板基于\texttt{ctex}宏包，强烈建议仔细阅读。
+
+交大的论文指南和模板都没有涉及到算法和代码的排版，所以本模板自行设计了一些样式。
+
+建议在\texttt{Overleaf}网站上测试，最后在本地电脑上排版，使用\texttt{Times New Roman}和\texttt{fontset = windows}。
+
+本模板对原作者Zhang Ming博士提交给研究生院的模板做了改良。
+\begin{enumerate}
+  \item 默认启用\texttt{newtxtext}宏包以使用其类似\texttt{Times New Roman}的开源字体；
+  \item 默认启用了\texttt{microtype}宏包以改善西文排版；
+  \item 默认启用了babel宏包，有兴趣的人也可以使用FreeSerif和fandol开源字体，排版包括俄语在内的多种语言；
+  \item 默认启用了\texttt{hologo}宏包以输出各种\hologo{TeX}有关的符号；
+  \item 默认启用了\texttt{xurl}宏包以改善URL排版；
+  \item 默认启用了\texttt{mathtools}宏包以改善最为广泛使用的\texttt{amsmath}宏包一些不足；
+  \item 默认启用了\texttt{bm}和\texttt{esvect}宏包以改善某些数学公式的排版；
+  \item 默认启用了\texttt{lem}和\texttt{csquotes}宏包以改善某些文本的排版；
+  \item 默认启用了\texttt{caption}宏包和\texttt{subfig}宏包以提供最佳的多浮动体和题注的排版；
+  \item 默认启用了\texttt{capt-of}宏包在不是浮动体的环境内插入题注；
+  \item 默认启用了\texttt{academicons}和\texttt{fontawesome5}宏包以插入一些矢量图标；
+  \item 默认启用了\texttt{multicol}宏包以提供局部的多栏环境；
+  \item 默认启用了\texttt{siunitx}宏包以正确排版数字和单位；
+  \item 默认启用了\texttt{longtable}, \texttt{xltabular}, \texttt{threeparttable}, 和\texttt{threeparttablex}宏包以提供跨页的、带有注释的复杂表格；
+  \item 默认启用了\texttt{zhlipsum}和\texttt{lipsum}宏包以提供中西文乱文；
+  \item 默认启用了\texttt{nomencl}宏包以排版符号缩写表；
+  \item 默认启用了\texttt{mdframed}宏包以排版带框的文本；
+  \item 默认启用了\texttt{minted}宏包以提供更简单美观的代码环境，编译时要注意 
+  
+  \verb|xelatex --shell-escape main.tex|；
+  
+  \item 默认更新了\hologo{BibTeX}的样式 \verb|gbt7714-numerical.bst|，要注意的是国家标准将文献中的西文作者名字都大写，而交大的模板却是将西文作者名字小写。如果需要修改，把 \verb|gbt7714-numerical.bst| 的 \verb|#1 'uppercase.name :=| 改成 \verb|#0 'uppercase.name :=| 即可。
+\end{enumerate}
+
+请读者使用本模板前仔细阅读交大的论文规范。
+\end{mdframed}
+
+%=========================================================================================
+\BiSection{图}{Figures}
+\BiSubsection{单幅图}{Single Figure}
+
+图~\ref{fig_ch2_echoes} 是用\hologo{TeX}Live自带的宏包Ti\textit{k}z绘制而成，Visio画不出这么好看的图。
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=\linewidth]{echoes}
+	\caption{雷达回波信号（{\color{red}注意}：图注是五号字）。}\label{fig_ch2_echoes}
+\end{figure}
+
+%-----------------------------------------------------------------------------------------
+\BiSubsection{多幅图}{Multiple Figures}
+
+如果一幅图中包含多幅子图，每一幅子图都要有图注，并且子图用(a)、(b)、(c)等方式编号，如图~\ref{fig_ch2_badge} 所示。
+\begin{figure}[!ht]
+	\centering
+	\subfloat[灰色的交大校徽]{\includegraphics[width=0.45\textwidth]{xjtu_gray}}
+	\hfill
+	\subfloat[蓝色的交大校徽]{\includegraphics[width=0.45\textwidth]{xjtu_blue}}
+	\caption{交大校徽\label{fig_ch2_badge}}
+\end{figure}
+
+%=========================================================================================
+\BiSection{表}{Tables}
+
+表格要求采用三线表，与文字齐宽，顶线与底线线粗是$1\frac{1}{2}$磅，中线线粗是1磅，如表~\ref{tab_ch2} 所示\footnote{{\color{red}注意}：图表中的变量与单位通过斜线 / 隔开。}。
+\begin{table}[!htb]
+	% \renewcommand{\arraystretch}{1.2}
+	\centering\wuhao
+	\caption{表题也是五号字}\label{tab_ch2} %\vspace{2mm}
+	\begin{tabularx}{\linewidth}{@{}YYYY@{}}
+	\toprule[1.5pt]
+		Interference & DOA/degree & Bandwidth/MHz & INR/dB\\
+	\midrule[1pt]
+		1 & -30 & 20 & 60\\
+		2 & 20 & 10 & 50\\
+		3 & 40 & 5 & 40\\
+	\bottomrule[1.5pt]
+	\end{tabularx}
+\end{table}
+
+%=========================================================================================
+\BiSection{公式}{Equations}
+\BiSubsection{单个公式}{Equations}
+
+\hologo{LaTeX}最强大的地方在于对数学公式的编辑，不仅美观，而且高效。单个公式的编号如式~(\ref{equ_ch2_pdf}) 所示，该式是正态分布的概率密度函数\cite{Manolakis2005}，
+\begin{equation}\label{equ_ch2_pdf}
+	f_Z(z)=\frac{1}{\pi\sigma^2}\exp\left(-\frac{|z-\mu|^2}{\sigma^2}\right)
+\end{equation}
+式中：$\mu$是Gauss随机变量$Z$的均值；$\sigma^2$是$Z$的方差。
+
+%-----------------------------------------------------------------------------------------
+\BiSubsection{多个公式}{Subequations}
+
+多个公式作为一个整体可以进行二级编号，如式~(\ref{equ_ch2_fourier}) 所示，该式是连续时间Fourier变换的正反变换公式\cite{Vetterli2014}，
+\begin{subequations}\label{equ_ch2_fourier}
+	\begin{align}
+		X(f)&=\int_{-\infty}^{\infty}x(t)e^{-j2\pi f t}\mathrm{d}t\\
+		x(t)&=\int_{-\infty}^{\infty}X(f)e^{j2\pi f t}\mathrm{d}f
+	\end{align}
+\end{subequations}
+式中：$x(t)$是信号的时域波形；$X(f)$是$x(t)$的Fourier变换。
+
+如果公式中包含推导步骤，可以只对最终的公式进行编号，例如：
+\begin{align}
+	\bm{w}_{\mathrm{smi}}&=\alpha\left[\frac{1}{\sigma_n^2}\bm{v}(\theta_0)- \frac{1}{\sigma_n^2}\bm{v}(\theta_0)+\sum_{i=1}^{N}\frac{\bm{u}_i^H\bm{v}(\theta_0)}{\lambda_i} \bm{u}_i\right]\nonumber\\
+	&=\frac{\alpha}{\sigma_n^2}\left[\bm{v}(\theta_0)- \sum_{i=1}^{N}\bm{u}_i^H\bm{v}(\theta_0)\bm{u}_i+ \sum_{i=1}^{N}\frac{\sigma_n^2\bm{u}_i^H\bm{v}(\theta_0)}{\lambda_i}\bm{u}_i\right]\nonumber\\
+	&=\frac{\alpha}{\sigma_n^2}\left[\bm{v}(\theta_0)-\sum_{i=1}^{N} \frac{\lambda_i-\sigma_n^2}{\lambda_i}\bm{u}_i^H\bm{v}(\theta_0)\bm{u}_i\right]
+\end{align}

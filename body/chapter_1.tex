@@ -1,77 +1,44 @@
-% !Mode:: "TeX:UTF-8" 
+%!Mode::"TeX:UTF-8"
 
-\BiChapter{图表公式}{Figures, Tables and Equations}
+\BiChapter{\hologo{LaTeX}介绍}{Introduction of \hologo{LaTeX}}
 
-论文写作过程中最重要的是{\hei 图、表、公式}等内容的编排。
+本章对\hologo{LaTeX}排版系统做一个简要介绍，希望没有使用过\hologo{LaTeX}的同学对\hologo{LaTeX}有一个初步认识。
 
 %=========================================================================================
-\BiSection{图}{Figures}
-\BiSubsection{单幅图}{Single Figure}
+\BiSection{\hologo{LaTeX}是什么？}{What is \hologo{LaTeX}?}
 
-图 \ref{fig_ch1_echoes} 是用 Tikz 画的，Visio 画不出这么好看的图。
-%
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=\textwidth]{echoes}
-	\caption{图注是五号字。} \label{fig_ch1_echoes}
-\end{figure}
+\hologo{LaTeX}是一款排版系统，和其它排版软件例如Word，相比，\hologo{LaTeX}具有非常明显的优势和不足。其最大的优势是高质量、高水准的专业排版效果；最大的缺点是使用门槛高，需要具备一定的编程基础\footnote{因为\hologo{LaTeX}的资源非常丰富，有许多模板可以使用，这些模板已经为用户定制好了排版格式，所以单纯从使用的角度看，使用\hologo{LaTeX}的门槛其实并不算高。}。对于习惯于抽象思维的科技人员而言，与精美的排版效果相比，\hologo{LaTeX}的确缺点是微不足道的，只要经过短时间（一周足已）的学习和实践，就可以编写出高质量的科研论文。
+
+\hologo{LaTeX}的基础是\hologo{TeX}，\hologo{TeX}诞生于20世纪70年代末到80年代初，用来排版高质量的书籍，特别是包含数学公式的书籍。有趣的是，这样一款排版软件并非在排版业界产生，而是由著名计算机科学家Donald Ervin Knuth（中文名高德纳）在修订其七卷巨著《计算机程序设计艺术》时设计的。
+
+虽然\hologo{TeX}功能非常强大，但是多达900多条的排版命令让排版人员使用起来非常不便。因此20世纪80年代初，Leslie Lamport博士给\hologo{TeX}编写了一组自定义命令宏包，并取名为\hologo{LaTeX}，其中La是其姓名的前两个字母。\hologo{LaTeX}拥有比原来的\hologo{TeX}更为规范的格式命令和一整套预定义的格式，可以让完全不懂排版技术的学者们很容易地将书籍和文稿排版出来。\hologo{LaTeX}一出，很快风靡全球，在1994年\hologo{LaTeXe}完善之后，现在已经成为国际上数学、物理、计算机等科技领域专业排版的事实标准，相关专业的学术期刊也都采用\hologo{LaTeX}作为投稿格式。
 
 %-----------------------------------------------------------------------------------------
-\BiSubsection{多幅图}{Multiple Figures}
+\BiSection{为什么用\hologo{LaTeX}？}{Why use \hologo{LaTeX}?}
 
-如果一幅图中包含多幅子图，每一幅子图都要有图注，并且子图用 (a)、(b)、(c) 等方式编号，如图 \ref{fig_ch1_badge} 所示。
+虽然论文排版是一项基本技能，但是从实际情况看，同学们经常被各种格式整得晕头转向。加之Word排版不够美观，版本管理麻烦，排版效率低下，因此开发\hologo{LaTeX}论文模板非常重要。国际上许多著名的出版机构和学术期刊都有自己的\hologo{LaTeX}模板，国内外许多高效也有自己的硕博论文\hologo{LaTeX}模板。事实上，\hologo{LaTeX}已经成为科技出版行业的国际标准，特别是数学、物理、计算机和电子信息学科。
 
-\begin{figure}[!ht]
-	\centering
-	\subfigure[灰色的交大校徽]{\includegraphics[width=0.45\textwidth]{xjtu_gray}} \hfill
-	\subfigure[蓝色的交大校徽]{\includegraphics[width=0.45\textwidth]{xjtu_blue}}
-	\caption{交大校徽 \label{fig_ch1_badge}}
-\end{figure}
+采用\hologo{LaTeX}排版主要有以下优点：
+\begin{enumerate}	
+    \item 排版质量高：主要体现在对版面尺寸的严格控制，对字距、行距和段距等间距的松紧适度掌握，对数学公式的精细设计，对插图和表格的灵活处理，对代码和算法的优美呈现，等等。
+    \item 安全稳定：自发布以来\hologo{TeX}和\hologo{LaTeX}没有发现系统漏洞，不会出现死机或者系统崩溃而导致编写的内容来不及保存。
+    \item 灵活方便：\hologo{LaTeX}的源文件是纯文本文件，文件大小比Word小很多，不会因为文容的增加而导致文档打开、编辑、保存和关闭等操作变慢。因为\hologo{LaTeX}在编译时才将所有源文件和图表汇总，故撰写内容时可以随意增删章节和图表。并且和大部分程序设计语言一样，\hologo{LaTeX}具有注释功能，作者可以在源文件任何地方添加注释，而不会影响最终生成的文档。
+    \item 格式和内容分离：\hologo{LaTeX}将文档格式和文档内容分开处理，作者只要选择合适的模板，就可专心致志地撰写文档内容，文档的格式细节则由\hologo{LaTeX}模板统一规划设置。特别是文献管理能力非常强大，这给撰写像博士论文一样需要大量引用参考文献的文档提供了很大便利。
+	\item 免费开源：\hologo{LaTeX}软件完全免费，源代码也全部公开，并且相应的配套软件也都采用开源的方式。
+\end{enumerate}
 
-%=========================================================================================
-\BiSection{表}{Tables} 
-
-表格要求采用三线表，与文字齐宽，顶线与底线线粗是 $1\frac12$ 磅，中线线粗是 1 磅，如表 \ref{tab_ch1} 所示\footnote{{\color{red}注意}：图表中的变量与单位通过斜线 $/$ 隔开。}。
-%
-\begin{table}[!ht]
-	\renewcommand{\arraystretch}{1.2}
-	\centering\wuhao
-	\caption{表题也是五号字} \label{tab_ch1} \vspace{2mm}
-	\begin{tabularx}{\textwidth}{*{4}Y}
-	\toprule[1.5pt]
-		Interference & DOA / degree & Bandwidth / MHz & INR / dB \\
-	\midrule[1pt]
-		1 & $-30$ & 20 & 60 \\
-		2 & 20 & 10 & 50 \\
-		3 & 40 & 5 & 40 \\
-	\bottomrule[1.5pt]
-	\end{tabularx}
-\end{table}
-
-%{\color{red} 通过和研究生院学位办负责论文模板的老师讨论确定：英文论文的格式和中文论文的格式完全相同，写英文论文时把 format.tex 中第 144 和 145 行的注释取消即可。}
+无论你是因为羡慕\hologo{LaTeX}漂亮的输出结果，还是因为要给学术期刊投稿而被逼上梁山，都不得不面对这样一个事实：\hologo{LaTeX}是一种并不简单的排版软件，不可能只点点鼠标就弄好一篇漂亮的文章。还得拿出点搞研究的精神，通过不断练习，才能编排出整齐漂亮的论文。一旦你掌握了如何使用\hologo{LaTeX}撰写出精美漂亮的论文时，你会发现你的决定是明智的，你的投入是值得的。
 
 %=========================================================================================
-\BiSection{公式}{Equations}
-\BiSubsection{单个公式}{Equations}
+\BiSection{怎样用\hologo{LaTeX}？}{How to use \hologo{LaTeX}?}
 
-单个公式的编号如式 (\ref{equ_ch1_pdf}) 所示，该式是标准正态分布的概率密度函数\citeup{Manolakis2005}，从公式可知 \LaTeX 排版的公式比 MathType 美观，而且公式编写效率更高。
-%
-\begin{equation} \label{equ_ch1_pdf}
-	f_Z(z) = \frac{1}{\pi\sigma^2} \exp\left(-\frac{|z-\mu|^2}{\sigma^2}\right)
-\end{equation}
-%
-式中：$\mu$ 是 Gauss 随机变量 $Z$ 的均值；$\sigma^2$ 是 $Z$ 的方差。
+本模板在Windows + \hologo{TeX}Live 2020\footnote{每年发布新版本} + \Hologo{TeX}Studio平台下开发，采用\hologo{XeLaTeX}引擎或者p\hologo{TeX}-ng引擎编译。虽然之前也开发过一个基于C\hologo{TeX}的模板，但是经过多方面比较发现\hologo{TeX}Live+\hologo{XeLaTeX}处理中文更好，所以基于C\hologo{TeX}的模板没有共享。
 
-%-----------------------------------------------------------------------------------------
-\BiSubsection{多个公式}{Subequations}
+{\color{red}本模板不能在C\hologo{TeX}软件下使用，必须采用\hologo{TeX}Live，并且编译方式是\hologo{XeLaTeX}。\hologo{TeX}Live每年更新一个版本，我用的是\hologo{TeX}Live 2020。文本编辑器可以根据自己的喜好选用，我用的是\hologo{TeX}Studio，这款开源软件非常不错，推荐大家使用。还有其他\url{https://tex.stackexchange.com/questions/339/latex-editors-ides}}
 
-多个公式作为一个整体可以进行二级编号，如 (\ref{equ_ch1_fourier}) 所示，该式是连续时间 Fourier 变换的正反变换公式\citeup{Vetterli2014}。
-%
-\begin{subequations} \label{equ_ch1_fourier}
-	\begin{align}
-		X(f) &= \int_{-\infty}^{\infty}x(t)e^{-j2\pi f t}\dif t \\
-		x(t) &= \int_{-\infty}^{\infty}X(f)e^{j2\pi f t}\dif f
-	\end{align}
-\end{subequations}
-%
-式中：$x(t)$ 是信号的时域波形；$X(f)$ 是 $x(t)$ 的 Fourier 变换。
+本模板的源文件通过主目录下的\texttt{main.tex}统一管理，\texttt{setup}文件夹中存放格式定义和封面、摘要、目录等内容，\texttt{body}文件夹中存放论文正文章节的源文件，appendix文件夹中存放附录、致谢和声明等内容。
+
+\begin{mdframed}
+本模板只提供论文的格式定义，不提供\hologo{LaTeX}的详细使用方法。
+因为\hologo{LaTeX}的资源非常丰富，大家可以在网上查找资料和并参与讨论，这样学习效率更高。我参考的两本书是《\hologo{LaTeX}入门》\cite{Liu_2013_LaTeXRuMen}和《一份（不太）简短的\hologo{LaTeX2e}介绍》\cite{Oetiker_2019_YiFenBuTaiJianDuanDeLaTeX2eJieShao}，还有《\hologo{LaTeX}科技文档排版》\cite{Gai_2005_LaTeXKeJiWenDangPaiBan}和《\hologo{LaTeX2e}插图指南》\cite{Reckdahl_2017_LaTeX2eChaTuZhiNan}。
+\end{mdframed}

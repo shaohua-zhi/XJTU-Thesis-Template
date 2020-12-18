@@ -1,4 +1,4 @@
-% !Mode:: "TeX:UTF-8" 
+% !Mode:: "TeX:UTF-8"
 
 %========================================= Font ==========================================
 % 定义字号
@@ -20,7 +20,9 @@
 	\let\@listi\@listI
 }
 
+% 脚注字体为 5号
 \renewcommand{\footnotesize}{\wuhao}
+
 % 设置行距和段落间垂直距离
 \setlength{\parindent}{2em}
 \setlength{\parskip}{3pt plus1pt minus1pt}
@@ -88,14 +90,14 @@
 	\subsection{#1}
 	\addcontentsline{toe}{subsection}{\protect\numberline{\csname thesubsection\endcsname}#2}
 }
-\newcommand{\BiSubsubsection}[2]{
-    \subsubsection{#1}
-    \addcontentsline{toe}{subsubsection}{\protect\numberline{\csname thesubsubsection\endcsname}#2}
-}
+% \newcommand{\BiSubsubsection}[2]{
+%     \subsubsection{#1}
+%     \addcontentsline{toe}{subsubsection}{\protect\numberline{\csname thesubsubsection\endcsname}#2}
+% }
 
 % 该附录命令适用于有章节的完整附录和用于发表文章和简历的附录
 \newcommand{\BiAppChapter}[2]{
-	\phantomsection 
+	\phantomsection
 	\chapter{#1}
 	\addcontentsline{toe}{chapter}{\xiaosi Appendix \thechapter~~#2}
 }
@@ -105,6 +107,10 @@
 	\addcontentsline{toc}{chapter}{\xiaosi #1}
 	\addcontentsline{toe}{chapter}{\xiaosi #2}  \chapter*{#1}
 }
+
+% 参考文献格式
+\bibliographystyle{gbt7714-numerical}
+\addtolength{\bibsep}{-0.8em}
 
 %======================================== Header =========================================
 % 定义页眉和页脚
@@ -119,14 +125,14 @@
 % 不要注销这一行，否则页眉会变成：“第1章1  绪论”样式
 \renewcommand{\chaptermark}[1]{\markboth{\chaptertitlename~~\ #1}{}}
 \fancyhf{}
-\fancyhead[CO]{\wuhao\leftmark}
+\fancyhead[CO]{\wuhao \leftmark}
 \fancyhead[CE]{\wuhao 西安交通大学博士学位论文}
 \fancyfoot[LE,RO]{\xiaowu \thepage}
 
 %======================================= Theorem =========================================
 % 定理正文和标题字体
 \theoremstyle{plain}
-\theoremheaderfont{\hei\rmfamily}
+\theoremheaderfont{\heiti\rmfamily}
 \theorembodyfont{\rmfamily}
 \theoremseparator{：}
 
@@ -135,75 +141,35 @@
 \setlength{\theorempostskipamount}{8pt}
 
 % 定义新的定理环境
-\theoremsymbol{$\Diamond$} \newtheorem{definition}{\hskip 2em \hei 定义}[chapter]
-\theoremsymbol{$\blacklozenge$} \newtheorem{example}{\hskip 2em \hei 例}[chapter]
-\theoremsymbol{$\square$} \newtheorem{theorem}{\hskip 2em \hei 定理}[chapter]
-\theoremsymbol{$\blacksquare$} \newtheorem*{proof}{\hskip 2em \hei 证明}
+\theoremsymbol{$\Diamond$} \newtheorem{definition}{\hskip 2em \heiti 定义}[chapter]
+\theoremsymbol{$\blacklozenge$} \newtheorem{example}{\hskip 2em \heiti 例}[chapter]
+\theoremsymbol{$\square$} \newtheorem{theorem}{\hskip 2em \heiti 定理}[chapter]
+\theoremsymbol{$\blacksquare$} \newtheorem*{proof}{\hskip 2em \heiti 证明}
 
 %========================================= FTE ===========================================
 % 图表公式的编号为1-1格式，子图编号为 (a) 的格式
-%\renewcommand{\figurename}{Figure}% 英文论文图标题以 Figure 开头
-%\renewcommand{\tablename}{Table}% 英文论文表标题以 Table 开头
 \renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}
-\renewcommand{\thesubfigure}{(\alph{subfigure})}
-\renewcommand{\p@subfigure}{\thefigure~}
 \renewcommand{\thetable}{\arabic{chapter}-\arabic{table}}
 \renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}}
 
 % 把 tabularx 宏包的列格式左对齐改成居中对齐
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 
-% 定制浮动图形和表格标题样式
-\captionnamefont{\wuhao}
-\captiontitlefont{\wuhao}
-\captiondelim{~~}
-\hangcaption
-\renewcommand{\subcapsize}{\wuhao}
-\setlength{\abovecaptionskip}{0pt}
-\setlength{\belowcaptionskip}{0pt}
-
-% 关于公式的几个定义
-\renewcommand{\Re}{\mathrm{Re}}
-\renewcommand{\Im}{\mathrm{Im}}
-\newcommand{\mbf}[1]{\mathbf{#1}}
-\newcommand{\Exp}{\mathrm{E}}
-\newcommand{\dif}{\mathrm{d}}
-\newcommand{\seq}[2]{#1_1,#1_2,\cdots,#1_#2}
-\newcommand{\iprod}[2]{\langle #1,#2 \rangle}
-
 % 调整罗列环境的布局
 \setitemize{leftmargin=3em,itemsep=0em,partopsep=0em,parsep=0em,topsep=-0em}
 \setenumerate{leftmargin=3.2em,itemsep=0em,partopsep=0em,parsep=0em,topsep=0em}
 
-% 自定义项目列表标签及格式 \begin{publist} 列表项 \end{publist}
-\newcounter{pubctr} %自定义新计数器
-\newenvironment{publist}{\wuhao\selectfont
-	\begin{list}{[\arabic{pubctr}]}{
-     \usecounter{pubctr}
-     \setlength{\leftmargin}{2em}		% 左边界
-     \setlength{\labelsep}{0.8em}		% 标号和列表项之间的距离,默认0.5em
-     \setlength{\parsep}{0ex}			% 段落间距
-     \setlength{\itemsep}{0ex}			% 标签间距
-    }}
-{\end{list}}%
-
 % 更改算法标题
-\renewcommand{\algorithmcfname}{算法}
-\renewcommand{\algocf@captiontext}[2]{\wuhao#1\algocf@typo ~ \AlCapFnt{}#2}
-\renewcommand\thealgocf{\csname the\algocf@within\endcsname-\@arabic\c@algocf}
 \SetAlCapSty{textrm}
-\SetAlCapSkip{1ex}
+\SetAlCapFnt{\wuhao}
+\SetAlCapNameFnt{\wuhao}
+\SetAlgoCaptionSeparator{\,\,}
+\SetAlCapSkip{10pt}
+\renewcommand\thealgocf{\csname the\algocf@within\endcsname-\@arabic\c@algocf}
 \makeatother
 
 % 更改代码标题
-\renewcommand{\lstlistingname}{代码}
-\renewcommand{\thelstlisting}{\arabic{chapter}-\arabic{lstlisting}}
-
-% 上角标形式的参考文献引用格式
-\newcommand{\citeup}[1]{\textsuperscript{\cite{#1}}}
-%======================================== Other ==========================================
-% 避免宏包 hyperref 和 arydshln 不兼容带来的目录链接失效的问题。
-\def\temp{\relax}
-\let\temp\addcontentsline
-\gdef\addcontentsline{\phantomsection\temp}
-\gdef\hitempty{}
+\renewcommand{\listingscaption}{代码}
+\renewcommand*{\thelisting}{\thechapter-\arabic{listing}}
+% \renewcommand{\lstlistingname}{代码}
+% \renewcommand{\thelstlisting}{\arabic{chapter}-\arabic{lstlisting}} 

@@ -1,36 +1,41 @@
 % !Mode:: "TeX:UTF-8"
 
-\documentclass[openany,twoside,fontset=none,UTF8]{ctexbook}
-\input{setup/package}
-\graphicspath{{figures/}}
+\documentclass[UTF8,openany,twoside,fontset=fandol]{ctexbook}	% 此处使用了开源的fandol字体
+\input{setup/package}											% 读取package.tex文件
+\graphicspath{{figures/}}										% 在figures文件夹里寻找图片，建议使用PDF格式的矢量图
 
 %===================================== Cover and TOC =====================================
-\begin{document}
-\input{setup/format}
+\begin{document}												% 文档开头
+\input{setup/format}											% 读取format.tex文件
+
 \frontmatter
-\input{setup/cover}
-\input{setup/abstract}
-\input{setup/content}
+\input{setup/cover}												% 封面
+\input{setup/abstract}											% 摘要
+\input{setup/content}											% 中英文目录
+\input{setup/nomenclature}										% 符号缩写表
+\printnomenclature[3cm]											% 排版nomenclature
+\addcontentsline{toe}{chapter}{Abbreviations and Symbols}		% 西文的符号缩写表命名，中文的名称请在package.tex里更改
 
 %======================================= Main Body =======================================
 \mainmatter
 \include{body/chapter_1}
 \include{body/chapter_2}
+\include{body/chapter_3}
 \include{appendix/acknowledgements}
 
 %======================================= Reference =======================================
 \wuhao\selectfont
-\bibliographystyle{bib/gbt-7714-2015-numerical}
 \addcontentsline{toc}{chapter}{参考文献}
 \addcontentsline{toe}{chapter}{References}
-\addtolength{\bibsep}{-0.8em}
 \bibliography{bib/mybib}
 
 %======================================= Appendix ========================================
 \include{setup/formatApp}
 \include{appendix/appA}
 \include{appendix/appB}
+\include{appendix/appC}
+\includepdf[pages=-]{appendix/1993.pdf}
 \include{appendix/achievements}
 \include{appendix/authorization}
 
-\end{document} 
+\end{document}

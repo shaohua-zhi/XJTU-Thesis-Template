@@ -1,69 +1,62 @@
 % !Mode:: "TeX:UTF-8"
 
-\usepackage[%
-	a4paper,
-	top=21mm,
-	bottom=20mm,
-	left=26mm,
-	right=26mm,
-	includehead,
-	includefoot
-]{geometry}					% 控制页面尺寸
+\usepackage[a4paper,top=21mm,bottom=20mm,left=26mm,right=26mm,includehead,includefoot]{geometry}					% 控制页面尺寸
+\usepackage[russian,french,ngerman,main=english]{babel}	% 对俄语，法语，德语，和英语的支持
+\usepackage{microtype}      % 对西文排版的改进
+
+% \usepackage{newtxtext}      % 使用开源的模仿Times New Roman的字体
+\setmainfont{Times New Roman}
+
+% \setmainfont{FreeSerif}		% 有西里尔字母
+% \setsansfont{FreeSans}
+% \setmonofont{FreeMono}
+
 \usepackage{titletoc}       % 控制目录的宏包
 \usepackage{titlesec}       % 控制标题的宏包
 \usepackage{fancyhdr}       % 页眉和页脚的相关定义
-\usepackage{color}          % 支持彩色
+\usepackage{xcolor}          % 支持彩色
 \usepackage{graphicx}		% 处理图片
 \usepackage{float}			% 浮动体处理
-\usepackage{tabularx}		% 可伸缩表格
-\usepackage{multirow}       % 表格可以合并多个row
-\usepackage{booktabs}       % 表格横的粗线；\specialrule{1pt}{0pt}{0pt}
-\usepackage{longtable}      % 支持跨页的表格。
+\usepackage{xurl}	        % 插入改良的URL
+\usepackage{verbatim}       % 将一段代码原样转义输出
 \usepackage{enumitem}       % 使用enumitem宏包,改变列表项的格式
 \usepackage{amsmath}        % 公式宏包
 \usepackage{amssymb}		% 符号宏包
+\usepackage{mathtools}      % 对AMS数学宏包的改进
 \usepackage{bm}				% 处理数学公式中的黑斜体的宏包
-\usepackage{lmodern}		% 数学公式字体
+\usepackage{ulem}           % 提供排版可断行下划线的命令
+\usepackage{esvect}         % 提供各种向量的箭头符号
+\usepackage{csquotes}       % 各种西文的引号
+\usepackage[font=footnotesize]{caption}     % 使用caption宏包设置浮动体标题
+    \DeclareCaptionLabelSeparator{mysep}{\,\,\,}
+    \captionsetup{labelsep=mysep}
+\usepackage[caption=false,font=footnotesize]{subfig}    % 比较好的并列的浮动体宏包
+\usepackage{capt-of}        % 在不是浮动体的环境内插入标题
+\usepackage{pdfpages}       % 插入整页的PDF文件
+\usepackage{fontawesome5}   % 插入一些有趣的矢量图标
+\usepackage{academicons}    %插入一些学术界适用的矢量图标
+    \definecolor{orcidlogocol}{HTML}{A6CE39}
+\usepackage{hologo}         % 输出各种各样的latex字样
+\usepackage{multicol}       % 插入多个分栏的局部页面
+\usepackage{siunitx}        % 正确排版数字与单位，使数字和单位的字体与上下文保持一致
+    \sisetup{detect-all,math-micro = \text{µ},text-micro = µ,per-mode = symbol}
+\usepackage{tabularx}		% 可伸缩表格
+\usepackage{multirow}       % 表格可以合并多个row
+\usepackage{diagbox}        % 在表格里打印斜线
+\usepackage{booktabs}       % 表格横的粗线；\specialrule{1pt}{0pt}{0pt}
+\usepackage{longtable}      % 支持跨页的表格
+\usepackage{xltabular}      % 跨页表格longtable+自适应表格tabularx
+\usepackage{threeparttable} % 正确插入表格内的footnote
+\usepackage{zhlipsum}       % 中文乱文
+\usepackage{lipsum}         % 西文乱文
+\usepackage[intoc]{nomencl} % 输出缩写表
+    \renewcommand{\nomname}{缩写和符号表} % 更改Nomenclature的名称
+    \makenomenclature
+\usepackage[chapter]{minted}% 引用代码，比较漂亮
+\usepackage[referable]{threeparttablex}             % 跨页表格longtable的threeparttable
+\usepackage[framemethod=tikz]{mdframed}             % 插入带框的文本
 \usepackage[amsmath,thmmarks,hyperref]{ntheorem}	% 定理类环境宏包
-\usepackage[hang]{subfigure}						% 图形或表格并排排列
-\usepackage[subfigure]{ccaption}					% 支持双语标题
-\usepackage[sort&compress,numbers]{natbib}			% 支持引用缩写的宏包
-\usepackage{fontspec}		% 字体设置宏包
-
-% 生成有书签的 pdf 及其开关, 该宏包应放在所有宏包的最后, 宏包之间有冲突
-\usepackage[%
-	xetex,
-    bookmarksnumbered=true,
-    bookmarksopen=true,
-    colorlinks=false,
-    pdfborder={0 0 0.7},
-    citebordercolor={0 0 1},
-    breaklinks=true
-]{hyperref}
-\hypersetup{hidelinks}		% hide links (remove color and border).
-
-% 算法的宏包，注意宏包兼容性，先后顺序为float、hyperref、algorithm(2e)，否则无法生成算法列表
-\usepackage[plainruled,linesnumbered,algochapter]{algorithm2e}
-
-\usepackage{listings}		% 为了避免与页眉的兼容问题可将listings放入table环境中
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\lstset{%
-	language={[ISO]C++},				% 设置语言
-	alsolanguage=Matlab,				% 可以添加多个语言选项
-	alsolanguage=Verilog,
-	morekeywords={numerictype,fimath,fipref,fi,trh},
-	commentstyle=\color{codegreen},		% 注释颜色
-	keywordstyle=\color{blue},			% 代码关键字颜色
-	stringstyle=\color{codepurple},		% 代码中字符串颜色
-	frame=single,			% 设置边框, 
-	xleftmargin=1.7em,		% 设定listing左边空白 
-	numbers=left,			% 左侧显示行号
-	numberstyle=\small,		% 行号字体用小号
-	breaklines=true,		% 对过长的代码自动换行 
-	columns=flexible,		% 调整字符之间的距离
-	tabsize=4				% table 长度
-}
+\usepackage[sort&compress]{gbt7714}
 
 % 带圆圈的脚注
 \usepackage{pifont}
@@ -72,11 +65,8 @@
 	{\ding{195}}{\ding{196}}{\ding{197}}{\ding{198}}{\ding{199}}{\ding{200}}{\ding{201}}}
 \setfnsymbol{circled}
 
-% 字体设置，Windows自带黑体(simhei.ttf)和宋体(simsun.ttf)
-\defaultfontfeatures{Mapping=tex-text}
-\setmainfont{Times New Roman}
-\setsansfont{Arial}
-\setCJKmainfont{SimSun}
-\setCJKsansfont{SimHei}
-\setCJKfamilyfont{hei}{SimHei}
-\newcommand{\hei}{\CJKfamily{hei}}
+% 生成有书签的 pdf 及其开关, 该宏包应放在所有宏包的最后, 宏包之间有冲突
+\usepackage[bookmarksnumbered=true,bookmarksopen=true,breaklinks=true,hidelinks=true,colorlinks=false,pdfstartview=FitH]{hyperref}
+
+% 算法的宏包，注意宏包兼容性，先后顺序为float、hyperref、algorithm(2e)，否则无法生成算法列表
+\usepackage[plainruled,linesnumbered,algochapter]{algorithm2e}

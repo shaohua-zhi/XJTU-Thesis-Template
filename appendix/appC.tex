@@ -1,0 +1,200 @@
+% !Mode:: "TeX:UTF-8"
+
+\BiAppChapter{复杂表格、图片和分栏}{Complicated Tables, Figures, and Multiple Columns}
+
+%=========================================================================================
+\BiSection{复杂表格}{Complicated Tables}
+
+请用\url{https://www.tablesgenerator.com/}生成表格
+
+\begin{table}[H]
+%   \renewcommand{\arraystretch}{1.2}
+  \centering\wuhao
+    \begin{threeparttable}
+        \caption{一些来自fontawesome5和academicons宏包的适量图标}\label{Alphabet}
+            \begin{tabularx}{\linewidth}{@{}YYY@{}}
+                \toprule[1.5pt]
+                \diagbox{A1}{A2}{A3} & B\tnote{1} & C\tnote{2} \\
+                \midrule[1pt]
+                微信图标 \faWeixin & CV \aiCV & research gate \aiResearchGate \\
+                overleaf \aiOverleaf & orcid \aiOrcid & open access \aiOpenAccess \\
+                \bottomrule[1.5pt]
+            \end{tabularx}
+            \begin{tablenotes}
+                \item[1] B1
+                \item[2] C2
+            \end{tablenotes}
+    \end{threeparttable}
+\end{table}
+
+
+\begin{ThreePartTable}
+\begin{TableNotes}
+\item[a] \label{tn:a} test test test test test test test test
+\item[b] \label{tn:b} test2
+\source Made up by daleif
+\end{TableNotes}
+% \renewcommand{\arraystretch}{1.2}
+\centering\wuhao
+\begin{xltabular}{\linewidth}{@{}YYY@{}}
+\caption{一个使用threeparttablex宏包制作的跨页的表格} \label{tab:long} \\
+
+\toprule[1.5pt]
+\multicolumn{1}{c}{\textbf{First column}} & \multicolumn{1}{c}{\textbf{Second column}} & \multicolumn{1}{c}{\textbf{Third column}} \\
+\midrule[1pt]
+\endfirsthead
+
+\multicolumn{3}{c}%
+{\tablename\ \thetable{} -- continued from previous page} \\
+
+\toprule[1.5pt]
+\multicolumn{1}{c}{\textbf{First column}} & \multicolumn{1}{c}{\textbf{Second column}} & \multicolumn{1}{c}{\textbf{Third column}} \\
+\midrule[1pt]
+\endhead
+
+\midrule[1pt]
+\multicolumn{3}{r}{{\textit{Continued on next page}}} \\
+
+\endfoot
+
+\insertTableNotes\\
+\endlastfoot
+
+One\tnotex{tn:a} & abcdef ghjijklmn & 123.456778 \\
+One\tnotex{tn:b} & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+\bottomrule[1.5pt]
+\end{xltabular}
+\end{ThreePartTable}
+
+
+%=========================================================================================
+\BiSection{图片}{Figures}
+
+\begin{figure}
+    \centering
+    \subfloat[]{\includegraphics[width=0.4\linewidth]{xjtu_blue}}
+    \hfill
+    \subfloat[]{\includegraphics[width=0.4\linewidth]{xjtu_blue}}
+
+    \subfloat[]{\includegraphics[width=0.4\linewidth]{xjtu_blue}}
+    \hfill
+    \subfloat[]{\includegraphics[width=0.4\linewidth]{xjtu_blue}}
+
+    \subfloat[]{\includegraphics[width=0.4\linewidth]{xjtu_blue}}
+    \hfill
+    \subfloat[]{\includegraphics[width=0.4\linewidth]{xjtu_blue}}
+    \caption{Two animals}
+    \label{1122}
+\end{figure}
+
+\begin{mdframed}
+\zhlipsum
+\begin{center}
+    \includegraphics[width=0.5\linewidth]{xjtu_blue}
+    \captionof{figure}{这是框内图片}
+\end{center}
+\zhlipsum
+\end{mdframed}
+
+
+\BiSection{分栏}{Multiple Columns}
+
+\begin{multicols}{2}
+\zhlipsum
+\end{multicols}
+
+\begin{multicols}{3}
+\lipsum
+\end{multicols}
+
+\begin{listing}[H]
+\begin{minted}[linenos=true,mathescape,breaklines,breakafter=d,frame=single,fontsize=\footnotesize]{python}
+# Returns $\sum_{i=1}^{n}i$
+
+def sum_from_one_to(n):
+    r = range(1, n + 1)
+    return sum(r)
+
+some_string = 'SomeTextThatGoesOnAndOnForSoLongThatItCouldNeverFitOnOneLine'
+\end{minted}
+\caption{\,一个代码的例子}
+% \label{lst:example}
+\end{listing} 
