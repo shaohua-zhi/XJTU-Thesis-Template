@@ -6,8 +6,18 @@
   \renewcommand{\figurename}{图}%
   \renewcommand{\tablename}{表}%
 }
+\usepackage{iftex}  %判定是否是某种tex引擎
 
+\ifptexng
+    \usepackage{bmpsize}    %ptex-ng专用的宏集
+\fi
+
+\ifxetex
+\usepackage{fontawesome5}   % 插入一些有趣的矢量图标
+\usepackage{academicons}    %插入一些学术界适用的矢量图标
+    \definecolor{orcidlogocol}{HTML}{A6CE39}
 \usepackage{microtype}      % 对西文排版的改进
+\fi
 
 % \usepackage{newtxtext}      % 使用开源的模仿Times New Roman的字体
 \setmainfont{Times New Roman}
@@ -30,16 +40,12 @@
 \usepackage{bm}				% 处理数学公式中的黑斜体的宏包
 \usepackage{ulem}           % 提供排版可断行下划线的命令
 \usepackage{esvect}         % 提供各种向量的箭头符号
-\usepackage{csquotes}       % 各种西文的引号
 \usepackage[font=footnotesize]{caption}     % 使用caption宏包设置浮动体标题
     \DeclareCaptionLabelSeparator{mysep}{\,\,\,}
     \captionsetup{labelsep=mysep}
 \usepackage[caption=false,font=footnotesize]{subfig}    % 比较好的并列的浮动体宏包
 \usepackage{capt-of}        % 在不是浮动体的环境内插入标题
 \usepackage{pdfpages}       % 插入整页的PDF文件
-\usepackage{fontawesome5}   % 插入一些有趣的矢量图标
-\usepackage{academicons}    %插入一些学术界适用的矢量图标
-    \definecolor{orcidlogocol}{HTML}{A6CE39}
 \usepackage{hologo}         % 输出各种各样的latex字样
 \usepackage{multicol}       % 插入多个分栏的局部页面
 \usepackage{siunitx}        % 正确排版数字与单位，使数字和单位的字体与上下文保持一致
@@ -61,6 +67,7 @@
 \usepackage[framemethod=tikz]{mdframed}             % 插入带框的文本
 \usepackage[amsmath,thmmarks,hyperref]{ntheorem}	% 定理类环境宏包
 \usepackage[sort&compress]{gbt7714}
+\usepackage{csquotes}       % 各种西文的引号
 
 % 带圆圈的脚注
 \usepackage{pifont}
@@ -74,3 +81,5 @@
 
 % 算法的宏包，注意宏包兼容性，先后顺序为float、hyperref、algorithm(2e)，否则无法生成算法列表
 \usepackage[plainruled,linesnumbered,algochapter]{algorithm2e}
+
+\pdfminorversion = 7
