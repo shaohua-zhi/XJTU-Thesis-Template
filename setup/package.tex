@@ -2,11 +2,15 @@
 
 \usepackage[a4paper,top=21mm,bottom=20mm,left=26mm,right=26mm,includehead,includefoot]{geometry}					% 控制页面尺寸
 \usepackage[russian,french,ngerman,main=english]{babel}	% 对俄语，法语，德语，和英语的支持
+\addto\captionsenglish{% 只有在启用babel宏包以后才能用这些命令
+  \renewcommand{\figurename}{图}%
+  \renewcommand{\tablename}{表}%
+}
+
 \usepackage{microtype}      % 对西文排版的改进
 
 % \usepackage{newtxtext}      % 使用开源的模仿Times New Roman的字体
 \setmainfont{Times New Roman}
-
 % \setmainfont{FreeSerif}		% 有西里尔字母
 % \setsansfont{FreeSans}
 % \setmonofont{FreeMono}
