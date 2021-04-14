@@ -6,4 +6,4 @@ It is a LaTeX template for doctoral thesis of Xi'an Jiaotong University (XJTU). 
 
 暂时取消了包含在原模板里面的来自于 Windows 系统的宋体和黑体，转而使用开源的 Fandol 字体。
 
-请感兴趣的人在 overleaf 上编译。
+请感兴趣的人先在 overleaf 上编译，最后在本地 Windows 电脑里编译。
