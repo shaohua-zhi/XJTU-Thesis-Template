@@ -2,25 +2,28 @@
 
 \BiChapter{图表公式排版}{Figures, Tables, and Equations}
 
-虽然本模板不讲解\hologo{LaTeX}的详细使用方法，但是为了方便大家使用本模板撰写论文，本章对论文写作中经常用到的{\heiti 图、表、公式}等内容的排版方法做一个简单介绍。
+虽然本模板不讲解\hologo{LaTeX2e}的详细使用方法，但是为了方便大家使用本模板撰写论文，本章对论文写作中经常用到的{\bfseries 图、表、公式}等内容的排版方法做一个简单介绍。
 
 \begin{mdframed}
 本模板基于\texttt{ctex}宏包，强烈建议仔细阅读。
 
 交大的论文指南和模板都没有涉及到算法和代码的排版，所以本模板自行设计了一些样式。
 
-建议在\texttt{Overleaf}网站上测试，最后在本地电脑上排版，使用\texttt{Times New Roman}和\texttt{fontset = windows}。
+在\texttt{Overleaf}网站上排版，使用\texttt{Times New Roman}和\texttt{fontset = fandol}。
+
+注意区分宋体、宋体的伪加粗体（即Word中常见的用法）、黑体和宋体文本的强调形式——楷体（\emph{字体}）
+
+注意数学公式的积分的$\mathrm{d}$的前面要与被积分的内容加空格\verb|\,|
 
 本模板对原作者Zhang Ming博士提交给研究生院的模板做了改良。
 \begin{enumerate}
-  \item 默认启用\texttt{newtxtext}宏包以使用其类似\texttt{Times New Roman}的开源字体；
   \item 默认启用了\texttt{microtype}宏包以改善西文排版；
-  \item 默认启用了babel宏包，有兴趣的人也可以使用FreeSerif和fandol开源字体，排版包括俄语在内的多种语言；
+  \item 默认启用了\texttt{babel}宏包，有兴趣的人也可以使用FreeSerif开源字体，排版包括俄语在内的多种语言；
   \item 默认启用了\texttt{hologo}宏包以输出各种\hologo{TeX}有关的符号；
   \item 默认启用了\texttt{xurl}宏包以改善URL排版；
   \item 默认启用了\texttt{mathtools}宏包以改善最为广泛使用的\texttt{amsmath}宏包一些不足；
   \item 默认启用了\texttt{bm}和\texttt{esvect}宏包以改善某些数学公式的排版；
-  \item 默认启用了\texttt{ulem}和\texttt{csquotes}宏包以改善某些文本的排版；
+  \item 默认启用了\texttt{csquotes}宏包以改善某些文本的排版，但是不要随便启用\texttt{ulem}宏包；
   \item 默认启用了\texttt{caption}宏包和\texttt{subfig}宏包以提供最佳的多浮动体和题注的排版；
   \item 默认启用了\texttt{capt-of}宏包在不是浮动体的环境内插入题注；
   \item 默认启用了\texttt{academicons}和\texttt{fontawesome5}宏包以插入一些矢量图标；
@@ -98,8 +101,8 @@
 多个公式作为一个整体可以进行二级编号，如式~(\ref{equ_ch2_fourier}) 所示，该式是连续时间Fourier变换的正反变换公式\cite{Vetterli2014}，
 \begin{subequations}\label{equ_ch2_fourier}
 	\begin{align}
-		X(f)&=\int_{-\infty}^{\infty}x(t)e^{-j2\pi f t}\mathrm{d}t\\
-		x(t)&=\int_{-\infty}^{\infty}X(f)e^{j2\pi f t}\mathrm{d}f
+		X(f)&=\int_{-\infty}^{\infty}x(t)e^{-j2\pi f t}\,\mathrm{d}t\\
+		x(t)&=\int_{-\infty}^{\infty}X(f)e^{j2\pi f t}\,\mathrm{d}f
 	\end{align}
 \end{subequations}
 式中：$x(t)$是信号的时域波形；$X(f)$是$x(t)$的Fourier变换。

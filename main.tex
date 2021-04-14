@@ -1,20 +1,21 @@
 % !Mode:: "TeX:UTF-8"
 
-\documentclass[UTF8,openany,twoside,fontset=fandol]{ctexbook}	% 此处使用了开源的fandol字体
-\input{setup/package}											% 读取package.tex文件
-\graphicspath{{figures/}}										% 在figures文件夹里寻找图片，建议使用PDF格式的矢量图
+\documentclass[UTF8,openany,twoside,fontset=fandol]{ctexbook}
+\input{setup/package}
+\graphicspath{{figures/}}
 
 %===================================== Cover and TOC =====================================
-\begin{document}												% 文档开头
-\input{setup/format}											% 读取format.tex文件
+\begin{document}
+\input{setup/format}
 
 \frontmatter
-\input{setup/cover}												% 封面
-\input{setup/abstract}											% 摘要
-\input{setup/content}											% 中英文目录
-\input{setup/nomenclature}										% 符号缩写表
-\printnomenclature[5cm]											% 排版nomenclature
-\addcontentsline{toe}{chapter}{Abbreviations and Symbols}		% 西文的符号缩写表命名，中文的名称请在package.tex里更改
+\input{setup/cover}
+\input{setup/abstract}
+\input{setup/content}
+
+\input{setup/nomenclature}
+\printnomenclature[3cm]
+% \addcontentsline{toe}{chapter}{Major Symbols}
 
 %======================================= Main Body =======================================
 \mainmatter
@@ -37,6 +38,8 @@
 \includepdf[pages=-]{appendix/1993.pdf}
 \includepdf[pages=-]{appendix/2015.pdf}
 \include{appendix/achievements}
+\include{appendix/committees}
+\include{appendix/reviewers}
 \include{appendix/authorization}
 
 \end{document}

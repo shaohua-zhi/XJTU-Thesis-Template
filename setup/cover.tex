@@ -3,7 +3,7 @@
 \begin{titlepage}
 	% 中文封面
 	\begin{center}
-		\begin{figure*}[!ht]\vspace{5em}
+		\begin{figure*}[!ht]\vspace{4.5em}
 			\centering
 			\includegraphics[width=0.5\textwidth]{xjtu}
 		\end{figure*}
@@ -12,17 +12,16 @@
 		\begin{center} {\zihao{2} 博士学位论文} \end{center}
 		
 		\vspace{8.5em}
-		\begin{center} {\sanhao\heiti 西安交通大学博士学位论文\hologo{LaTeX}模板}\end{center}
+		\begin{center} {\sanhao\bfseries{西安交通大学博士学位论文\hologo{LaTeX}模板}}\end{center}
 		
-		\vspace{15em}
+		\vspace{16em}
 		{\sanhao
-			\begin{center} \renewcommand{\arraystretch}{1.5}
+			\begin{center} \renewcommand{\arraystretch}{1.8}
 				\begin{tabular}{c}
 					学位申请人：XXX \\
-					指导教师：XXX~教授 \\
-					合作导师：XXX~教授 \\
+					指导教师：XXX\,\,\,教授 \\
 					学科名称：XXX \\
-					XXXX 年 X 月 \\
+					2021年01月 \\
 				\end{tabular} \renewcommand{\arraystretch}{1}
 			\end{center}
 		}
@@ -33,13 +32,13 @@
 	% 英文封面
 	\newpage\thispagestyle{empty}
 	\begin{center}
-		\parbox[t][0.7cm][t]{\textwidth}{}
+		\parbox[t][0.4cm][t]{\textwidth}{}
 		
 		\begin{center}{\sanhao\bfseries \hologo{LaTeX} Template for Doctoral Dissertation of XJTU}\end{center}
 		
-		\vspace{4.7cm}
+		\vspace{4.1cm}
 		{\sanhao
-			\begin{center} \renewcommand{\arraystretch}{1.4}
+			\begin{center} \renewcommand{\arraystretch}{1.35}
 				\begin{tabular}{c}
 					A dissertation submitted to  \\
 					Xi'an Jiaotong University \\
@@ -50,16 +49,15 @@
 			\end{center}
 		}
 		
-		\vspace{3cm}
+		\vspace{1.4cm}
 		{\sanhao
-			\begin{center} \renewcommand{\arraystretch}{1.5}
+			\begin{center} \renewcommand{\arraystretch}{1.35}
 				\begin{tabular}{c}
 					By \\
-					XXX (名在前，姓在后，例如 Ming Zhang) \\
-					Supervisor: Prof. XXX (导师姓名全拼，例如 Anxue Zhang) \\
-					Associate Supervisor: Prof. XXX (导师姓名全拼，例如 Anxue Zhang) \\
-					XXXXXX (学科名称，例如：Electronic Science and Technology) \\
-					XXX XXXX (英文日期，月在前，年在后，例如：September 2017) \\
+					Shaohua Zhi \\
+					Supervisor: Prof.\ Xuanqin Mou \\
+					Information and Communication Engineering \\
+					January 2021 \\
 				\end{tabular} \renewcommand{\arraystretch}{1}
 			\end{center}
 		}
@@ -69,30 +67,44 @@
 	%---------------------------------------------------------------------------------
 	% 答辩委员会
 	\newpage\thispagestyle{empty}
+
+\newgeometry{
+	a4paper,
+	top=21mm,
+	bottom=19mm,
+	left=26mm,
+	right=26mm,
+    headsep=5.5mm,
+	includehead,
+	includefoot
+}
+
 	\begin{center}
-		\parbox[t][0.7cm][t]{\textwidth}{}
+		\parbox[t][0cm][t]{\textwidth}{}
 		
-		\begin{center}{\zihao{-2}\heiti 博士学位论文答辩委员会}\end{center}
+		\begin{center}{\zihao{3}\bfseries{博士学位论文答辩委员会}}\end{center}
 		
 		\vspace{1cm}
-		\begin{center}{\zihao{3}\heiti 西安交通大学博士学位论文\hologo{LaTeX}模板}\end{center}
+		\begin{center}{\zihao{3}\bfseries{基于时空先验约束的四维锥束CT重建算法研究}}\end{center}
 		
-		\vspace{6cm}
+		\vspace{5.4cm}
 		{\sanhao
 			\begin{center} \renewcommand{\arraystretch}{1.5}
 				\begin{tabular}{l}
 					答辩人： XXX \\
 					答辩委员会委员：\\
-					\hspace{2em} XXXXXXXX 大学 XXX： \underline{\hspace{6em}} （主席）\\
-					\hspace{2em} XXXXXXXX 大学 XXX： \underline{\hspace{6em}} \\
-					\hspace{2em} XXXXXXXX 大学 XXX： \underline{\hspace{6em}} \\
-					\hspace{2em} XXXXXXXX 大学 XXX： \underline{\hspace{6em}} \\
-					\hspace{2em} XXXXXXXX 大学 XXX： \underline{\hspace{6em}} \\
-					答辩时间： XXXX 年 XX 月 XX 日 \\
-					答辩地点： XXXXXXXXXXXXXX \\
+					\hspace{2em} 空军军医大学\,XXX教授： \underline{\hspace{6em}}（主席）\\
+					\hspace{2em} 空军军医大学\,XX教授： \underline{\hspace{6em}} \\
+					\hspace{2em} 西安交通大学\,X\quad X教授： \underline{\hspace{6em}} \\
+					\hspace{2em} 西安交通大学\,XXX教授： \underline{\hspace{6em}} \\
+					\hspace{2em} 西安交通大学\,XXX教授： \underline{\hspace{6em}} \\
+					答辩时间： 2021年2月4日 \\
+					答辩地点： 西安交通大学兴庆校区XXX \\
 				\end{tabular} \renewcommand{\arraystretch}{1}
 			\end{center}
 		}
 	\end{center}
+	
+	\restoregeometry
 	\clearpage{\pagestyle{empty}\cleardoublepage}
 \end{titlepage}
