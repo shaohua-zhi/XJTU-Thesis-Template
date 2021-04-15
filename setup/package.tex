@@ -12,18 +12,18 @@
 ]{geometry}					% 控制页面尺寸
 
 \usepackage[russian,french,ngerman,main=english]{babel}	% 对俄语，法语，德语，和英语的支持
-\addto\captionsenglish{% 只有在启用babel宏包以后才能用这些命令
+\addto\captionsenglish{     % 只有在启用babel宏包以后才能用这些命令
   \renewcommand{\figurename}{图}%
   \renewcommand{\tablename}{表}%
   \renewcommand{\bibname}{参考文献}%
 }
 
 \usepackage{xcolor}         % 支持彩色
-\usepackage{iftex}  %判定是否是某种tex引擎
+\usepackage{iftex}          % 判定是否是某种tex引擎
 
 \ifptexng
-    \usepackage{newtxtext}     % 使用开源的模仿Times New Roman的字体
-    \usepackage{bmpsize}    %ptex-ng专用的宏集
+    \usepackage{newtxtext}  % 使用开源的模仿Times New Roman的字体
+    \usepackage{bmpsize}    % ptex-ng专用的宏集
 \fi
 
 \ifxetex
@@ -34,7 +34,7 @@
 
 \usepackage{fontawesome5}   % 插入一些有趣的矢量图标
 \usepackage{academicons}    %插入一些学术界适用的矢量图标
-    \definecolor{orcidlogocol}{HTML}{A6CE39}
+    \definecolor{orcidlogocol}{HTML}{A6CE39}    % ORCID的颜色
 \usepackage{microtype}      % 对西文排版的改进
 \fi
 
@@ -44,8 +44,8 @@
 \usepackage{titlesec}       % 控制标题的宏包
 \usepackage{fancyhdr}       % 页眉和页脚的相关定义
 \usepackage[final]{graphicx}% 处理图片
-\usepackage{float}		% 浮动体处理
-\usepackage{xurl}	    % 插入改良的URL
+\usepackage{float}		    % 浮动体处理
+\usepackage{xurl}	        % 插入改良的URL
 \usepackage{verbatim}       % 将一段代码原样转义输出
 \usepackage{enumitem}       % 使用enumitem宏包,改变列表项的格式
 \usepackage{amsmath}        % 公式宏包
@@ -71,7 +71,7 @@
 \usepackage{threeparttable} % 正确插入表格内的footnote
 \usepackage{zhlipsum}       % 中文乱文
 \usepackage{lipsum}         % 西文乱文
-\usepackage{nomencl} % 输出缩写表
+\usepackage{nomencl}        % 输出缩写表
     \renewcommand{\nomname}{主要符号表} % 更改Nomenclature的名称
     \makenomenclature
     \setlength{\nomitemsep}{-\parsep}
